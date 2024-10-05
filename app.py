@@ -82,4 +82,4 @@ def process_image():
     return jsonify({'stencil_image': stencil_filename})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
