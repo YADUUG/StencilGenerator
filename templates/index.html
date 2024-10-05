@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stencil Maker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/static/script.js"></script> <!-- Link to the external JavaScript file -->
+</head>
+<body>
+    <h1>Real-Time Stencil Maker</h1>
+
+    <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="file">Select an Image:</label>
+        <input type="file" name="file" accept="image/*" required><br><br>
+        <button type="submit">Upload Image</button>
+    </form>
+
+    <div id="controls" style="display:none;">
+        <h3>Adjust Threshold:</h3>
+        <input type="range" id="threshold" name="threshold" min="0" max="255" value="128">
+        
+        <h3>Adjust Sharpness:</h3>
+        <input type="range" id="sharpness" name="sharpness" min="1" max="10" value="1">
+        
+        <img id="stencil-image" style="display:block; margin-top:20px;" src="" alt="Stencil Image" />
+    </div>
+
+</body>
+</html>
